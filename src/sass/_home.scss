@@ -1,0 +1,21 @@
+.home {
+  background-color: $color-header;
+
+  &-pink-circle{
+  background-color: $color-ellipse ;
+  border: 1px solid;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+
+  &-ice-cream{
+    position: absolute;
+    width: 236px;
+    height: 557px;
+    left: 594px;
+    top: 108px;
+
+  }
+}}
