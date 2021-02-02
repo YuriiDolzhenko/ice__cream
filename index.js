@@ -184,16 +184,7 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"sass/main.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"./..\\images\\up.svg":[["up.8486ea5b.svg","images/up.svg"],"images/up.svg"],"./..\\images\\mobile\\gallery\\gallery.png":[["gallery.65c61a65.png","images/mobile/gallery/gallery.png"],"images/mobile/gallery/gallery.png"],"./..\\images\\tablet\\gallery\\gallery@2x.png":[["gallery@2x.aff43400.png","images/tablet/gallery/gallery@2x.png"],"images/tablet/gallery/gallery@2x.png"],"./..\\images\\desktop\\gallery\\gallery@3x.png":[["gallery@3x.c1728a94.png","images/desktop/gallery/gallery@3x.png"],"images/desktop/gallery/gallery@3x.png"],"./..\\images\\gallery.svg":[["gallery.aa98928a.svg","images/gallery.svg"],"images/gallery.svg"],"./..\\images\\home1.svg":[["home1.2e7d2e07.svg","images/home1.svg"],"images/home1.svg"],"./..\\images\\desktop\\sectionbd\\drops.png":[["drops.59162432.png","images/desktop/sectionbd/drops.png"],"images/desktop/sectionbd/drops.png"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
-"use strict";
-
-require("./sass/main.scss");
-},{"./sass/main.scss":"sass/main.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -397,5 +388,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=/src.e31bb0bc.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
+//# sourceMappingURL=/index.js.map
