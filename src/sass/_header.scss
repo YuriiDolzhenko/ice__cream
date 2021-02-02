@@ -2,6 +2,19 @@
   position: relative;
   padding: 0;
   width: 100%;
+  .btn {
+    @extend %link;
+    border-radius: 20px;
+    color: $color-accent;
+  
+    background-color: $color-text-white;
+    border: none;
+  
+    &:hover,
+    &:focus {
+      background-color: $color-accent-hover-btn;
+    }
+  }
 }
 html {
   scroll-behavior: smooth;
@@ -147,8 +160,9 @@ html {
   border: none;
   outline: 0;
   color: $color-text-white;
-  background-color: transparent;
+  background-color: $color-accent;
   transition: 250ms;
+  fill: $color-accent;
   &:hover,
   &:focus {
     transform: scale(1.1);
@@ -156,6 +170,7 @@ html {
   }
   @media (min-width: 1200px) {
     display: none;
+
   }
 }
 .menu-button-icon.close {
@@ -237,3 +252,4 @@ html {
   height: 8px;
   margin-left: 26px;
 }
+

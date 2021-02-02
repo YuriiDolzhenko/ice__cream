@@ -130,8 +130,7 @@
   color: currentColor;
   &:hover,
   &:focus {
-    background-color: #c7133e;
-    box-shadow: 0px 8px 50px rgba(210, 20, 67, 0.6);
+    background-color: $color-accent-hover;
   }}
 
 .home-button {
@@ -152,7 +151,6 @@
   &:hover,
   &:focus {
     transform: scale(1.1);
-    box-shadow: 0px 8px 50px rgba(210, 20, 67, 0.6);
   }
 
   @media screen and (min-width: 1200px) {
@@ -395,7 +393,11 @@
     bottom: -41%;
     left: 63%;
     transform: translate(-50%, -50%);
-  }
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
 
   @media screen and (min-width: 768px) {
     bottom: 0;
