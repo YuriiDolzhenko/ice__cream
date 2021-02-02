@@ -309,7 +309,7 @@ summary {
   overflow: hidden;
 }
 
-.footer-social-link:hover, .footer-social-link:focus, .footer-button:hover, .footer-button:focus, .products-thumb :hover,
+.footer-social-link:hover, .footer-social-link:focus, .footer-button:hover, .footer-button:focus, .more-link:focus, .more-link:hover, .more-link:focus .to-right-2, .more-link:hover .to-right-2, .products-thumb :hover,
 .products-thumb :focus, .home-icecream:hover, .home-arrow-button:hover, .home-arrow-button:focus, .home-arrow-button:hover .home-arrow-icon, .home-arrow-button:focus .home-arrow-icon, .btn:hover,
 .btn:focus {
   transform: scale(1.25);
@@ -318,7 +318,7 @@ summary {
   transition-duration: 250ms;
 }
 
-.products-thumb, .home-circle, .home-milk-text, .btn {
+.more-scale, .products-thumb, .home-circle, .home-milk-text, .btn {
   opacity: 1;
   transform: scale(1);
 }
@@ -1007,6 +1007,7 @@ html {
 
 .home-trend {
   display: none;
+  cursor: pointer;
 }
 @media screen and (min-width: 768px) {
   .home-trend {
@@ -1592,6 +1593,10 @@ html {
   color: #d41443;
   border-style: none;
   height: 44px;
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
   text-decoration: none;
   display: flex;
   justify-content: space-between;
@@ -1618,6 +1623,12 @@ html {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: 0;
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
+  transform: scale(1.25);
+  box-shadow: 0px 8px 30px rgba(212, 20, 67, 0.3);
 }
 @media screen and (min-width: 768px) and (max-width: 990px) {
   .button {
