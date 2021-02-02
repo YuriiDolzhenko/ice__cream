@@ -1,4 +1,4 @@
-.header-position {
+.header {
   position: relative;
   padding: 0;
   width: 100%;
@@ -9,9 +9,7 @@ html {
 
 .header a {
   text-decoration: none;
-
 }
-
 .container.header {
   position: absolute;
   display: flex;
@@ -28,10 +26,13 @@ html {
     padding-top: 37px;
   }
   @media (min-width: 1200px) {
-    justify-content: center;
+    padding-left: 5px;
+    width: 1200px;
+    margin-left: 40px;
+    margin-right: 40px;
+    max-width: 1200px;
   }
 }
-
 .logo {
   @extend %link;
   display: flex;
@@ -47,10 +48,7 @@ html {
   &:focus {
     color: $color-accent;
     text-decoration: none;
-    transform: scale(1.1);
-  }
-  @media (min-width: 1200px) {
-    margin-right: 110px;
+    @extend %scale_function;
   }
 }
 
@@ -62,175 +60,136 @@ html {
   background-color: $color-text-white;
   border-radius: 100%;
 }
-
-.menu {
-  position: relative;
-  display: flex;
-}
-.menu-button {
-  position: absolute;
-  top: -10px;
-  right: 10px;
-  z-index: 20;
-  width: 20px;
-  height: 22px;
-  outline: none;
-  background-color: transparent;
-  @media (min-width: 768px) {
-    right: -170px;
-    height: 20px;
-  }
-
-  @media (min-width: 1200px) {
-    display: none;
-  }
-}
-
-.menu-lines,
-.menu-lines::after,
-.menu-lines::before {
-  position: absolute;
-  width: 20px;
-  height: 2px;
-  background-color: $color-accent;
-}
-
-.menu-lines {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.menu-lines::before {
-  content: '';
-  top: -6px;
-}
-
-.menu-lines::after {
-  content: '';
-  top: 6px;
-}
-.menu-active .menu-button,
-.menu-active .menu-lines {
-  background-color: transparent;
-}
-
-.menu-active .menu-lines::before {
-  top: 0;
-  transform: rotate(45deg);
-  background-color: $color-text-white;
-}
-
-.menu-active .menu-lines::after {
-  top: 0;
-  transform: rotate(-45deg);
-  background-color: $color-text-white;
-}
-
-@media (min-width: 768px) {
-  .menu-active .menu-button {
-    position: fixed;
-    top: 25px;
-    right: 34px;
-    z-index: 15;
-    transition: 0.4s;
-  }
-}
-
-.menu-nav {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  z-index: 12;
-  display: flex;
-  flex-flow: column;
+.menu-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 492px;
+  width: inherit;
   padding-top: 60px;
-  height: 502px;
-  background-color: $color-bgr-modal;
-  overflow-y: auto;
-  width: 250px;
-  border-bottom-left-radius: 5%;
-  transition: 0.5s;
-  @media (min-width: 768px) {
-    height: 408px;
-  }
-  @media (min-width: 1200px) {
-    position: relative;
+  @media (max-width: 1199px) {
+    position: fixed;
+    z-index: 21;
     top: 0;
     right: 0;
-    background-color: transparent;
-    width: auto;
-    height: auto;
+    width: 250px;
+    background-color:$color-menu ;
+    display: none;
+    &.is-open {
+      display: block;
+      overflow-y: auto;
+    }
+  }
+  @media (min-width: 768px) {
+    height: 399px;
+  }
+  @media (min-width: 1200px) {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100%;
     padding-top: 0;
-    overflow-y: visible;
-    flex-flow: row-reverse;
-    & .menu-link:not(:last-child) {
-      margin-left: 35px;
+    margin-left: 110px;
+  }
+}
+.menu-nav {
+  color: $color-text-white;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  & .menu {
+    @media (min-width: 1200px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      & .menu-item:not(:last-child) {
+        margin-right: 35px;
+      }
     }
   }
 }
-
-.menu-active .menu-nav {
-  right: 0;
-}
-
-.menu-list {
+.menu-item-link {
+  display: block;
+  height: 42px;
+  padding-left: 21px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: $color-text-white;
+  text-decoration: none;
+  border: 1px solid $color-line-modal;
+  &:hover,
+  &:focus {
+    color: $color-accent;
+    text-decoration: none;
+  }
   @media (min-width: 1200px) {
     display: flex;
-    justify-content: space-between;
-    width: 545px;
-  }
-}
+    align-items: center;
 
-.menu-list-item {
-  display: flex;
-  // align-items: center;
-  // padding-left: 21px;
-  height: 42px;
-  font-weight: 700;
-  font-size: 14px;
-  border: 1px solid $color-line-modal;
-  &:focus,
-  &:hover {
-    color: $color-accent;
-  }
-  @media (min-width: 1200px) {
-    border: none;
-  }
-}
-
-.menu-link {
-  text-decoration: none;
-  font-weight: bold;
-  color: $color-text-white;
-  @media (min-width: 1200px) {
     font-size: 16px;
     border: none;
-    padding-left: 0px;
-    border-radius: 22px;
+    padding: 0%;
     transition: 250ms;
-    &:focus,
-    &:hover {
+    &:hover,
+    &:focus {
       transform: scale(1.1);
     }
   }
 }
-
-.menu-link:hover {
-  color: $color-accent;
+.menu-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: 0;
+  color: $color-text-white;
+  background-color: transparent;
+  transition: 250ms;
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+    outline: 0;
+  }
+  @media (min-width: 1200px) {
+    display: none;
+  }
+}
+.menu-button-icon.close {
+  display: none;
+}
+.menu-button.is-open {
+  position: fixed;
+  top: 23px;
+  right: 34px;
+  z-index: 21;
+  & .menu-button-icon.close {
+    display: block;
+    fill: currentColor;
+  }
 }
 
-.menu-overlay {
+.menu-button-icon.open {
+  fill: currentColor;
+
+  .menu-button.is-open & {
+    display: none;
+  }
+}
+.menu-container-overlay {
   display: none;
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 18;
   width: 100vw;
   height: 100vh;
-  z-index: 11;
-}
-.menu-active .menu-overlay {
-  display: block;
+  .menu-container.is-open + & {
+    display: block;
+  }
 }
 
 .buy-now {
@@ -240,30 +199,28 @@ html {
   margin-left: 21px;
   font-weight: 700;
   font-size: 16px;
-  box-shadow: none;
   transition: 250ms;
+  box-shadow: none;
   &:hover,
   &:focus {
-    outline: 0;
     transform: scale(1.1);
-    box-shadow: 0px 8px 50px rgba(210, 20, 67, 0.6);
+    outline: 0;
+    background-color:$color-accent-hover-btn;
   }
-  @media (min-width: 768px) {
-    width: 185px;
-  }
-
   @media (min-width: 1200px) {
     width: 160px;
-    margin-left: 110px;
-    margin-bottom: 0;
+  }
+  @media (min-width: 1200px) {
+    margin: 0;
   }
 }
 
 .buy-now.tablet {
   margin-bottom: 0;
-  margin-left: 30px;
+  margin-left: auto;
+  margin-right: 30px;
   width: 160px;
-  .menu.menu-active + & {
+  .menu-container.is-open + & {
     display: none;
   }
 
