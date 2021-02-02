@@ -1320,6 +1320,7 @@ html {
   border-radius: 24px;
   padding-top: 161px;
   padding-bottom: 41px;
+  box-shadow: 0px 10px 30px #e5e5e5;
 }
 @media screen and (min-width: 768px) {
   .card-description {
@@ -1775,6 +1776,17 @@ html {
   }
 }
 
+.carousel {
+  box-shadow: 0px 8px 30px #c2e297;
+  border-radius: 24px;
+}
+
+.carousel:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+  box-shadow: 0px 1px 18px 6px #f0d1a5;
+}
+
 .gallery-list {
   padding: 0;
   margin: 0;
@@ -1788,6 +1800,7 @@ html {
   height: auto;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 10px;
   margin-bottom: 60px;
   object-fit: fill;
 }
@@ -1798,7 +1811,7 @@ html {
   width: 280px;
   height: 308px;
   padding: 0px;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
   text-align: center;
 }
 @media screen and (min-width: 768px) {
@@ -2595,6 +2608,18 @@ html {
   box-shadow: 0px 1px 18px 6px #e18298;
 }
 
+.chicago-contact a:hover {
+  color: #ffb8ca;
+}
+
+.losangeles-contact a:hover {
+  color: #ffb8ca;
+}
+
+.newyork-contact a:hover {
+  color: #ffb8ca;
+}
+
 .main-footer-container {
   padding-left: 20px;
   padding-right: 20px;
@@ -2647,7 +2672,7 @@ html {
 }
 @media screen and (min-width: 768px) {
   .footer-button-item:not(:last-child) {
-    margin-right: 15px;
+    margin-right: 30px;
     margin-bottom: 0;
   }
 }
