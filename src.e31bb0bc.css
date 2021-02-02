@@ -310,14 +310,15 @@ summary {
 }
 
 .footer-social-link:hover, .footer-social-link:focus, .footer-button:hover, .footer-button:focus, .products-thumb :hover,
-.products-thumb :focus {
+.products-thumb :focus, .home-icecream:hover, .home-arrow-button:hover, .home-arrow-button:focus, .home-arrow-button:hover .home-arrow-icon, .home-arrow-button:focus .home-arrow-icon, .btn:hover,
+.btn:focus {
   transform: scale(1.25);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: 0;
   transition-duration: 250ms;
 }
 
-.products-thumb {
+.products-thumb, .home-circle, .home-milk-text, .btn {
   opacity: 1;
   transform: scale(1);
 }
@@ -436,6 +437,7 @@ a {
 .header-position {
   position: relative;
   padding: 0;
+  width: 100%;
 }
 
 html {
@@ -622,13 +624,13 @@ html {
 @media (min-width: 1200px) {
   .menu-list {
     display: flex;
+    justify-content: space-between;
+    width: 545px;
   }
 }
 
 .menu-list-item {
   display: flex;
-  align-items: center;
-  padding-left: 21px;
   height: 42px;
   font-weight: 700;
   font-size: 14px;
@@ -738,6 +740,7 @@ html {
 
 .home a {
   text-decoration: none;
+  color: inherit;
 }
 
 .home-container {
@@ -868,13 +871,19 @@ html {
 
 .btn.light:hover,
 .btn.light:focus {
-  background-color: #d41443;
+  background-color: #c7133e;
+  color: #ffffff;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
 }
 
 .home-button {
   border-radius: 20px;
   background-color: #d41443;
   color: #ffffff;
+  color: currentColor;
 }
 .home-button:hover, .home-button:focus {
   background-color: #c7133e;
@@ -901,33 +910,6 @@ html {
   .home-button {
     font-size: 14px;
     padding: 10px 15px;
-  }
-}
-
-.home-icecream {
-  width: 171px;
-  height: auto;
-  position: absolute;
-  z-index: 4;
-}
-@media screen and (max-width: 767px) {
-  .home-icecream {
-    bottom: -41%;
-    left: 63%;
-    transform: translate(-50%, -50%);
-  }
-}
-@media screen and (min-width: 768px) {
-  .home-icecream {
-    bottom: 0;
-    left: 378px;
-    width: 143px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .home-icecream {
-    left: 594px;
-    width: 236px;
   }
 }
 
@@ -1001,7 +983,7 @@ html {
   padding: 0;
 }
 .home-arrow-button:hover, .home-arrow-button:focus, .home-arrow-button:hover .home-arrow-icon, .home-arrow-button:focus .home-arrow-icon {
-  background-color: rgba(210, 20, 67, 0.6);
+  background-color: #c7133e;
   color: #ffffff;
 }
 @media screen and (min-width: 1200px) {
@@ -1151,6 +1133,33 @@ html {
     width: 538px;
     bottom: 75px;
     left: 475px;
+  }
+}
+
+.home-icecream {
+  width: 171px;
+  height: auto;
+  position: absolute;
+  z-index: 4;
+}
+@media screen and (max-width: 767px) {
+  .home-icecream {
+    bottom: -41%;
+    left: 63%;
+    transform: translate(-50%, -50%);
+  }
+}
+@media screen and (min-width: 768px) {
+  .home-icecream {
+    bottom: 0;
+    left: 378px;
+    width: 143px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .home-icecream {
+    left: 594px;
+    width: 236px;
   }
 }
 
@@ -1385,7 +1394,7 @@ html {
   border-radius: 50%;
   background: #ffffff;
   transition-property: background;
-  transition-duration: 10ms;
+  transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: 0;
 }
@@ -1606,7 +1615,7 @@ html {
   background-color: #d41342;
   color: #ffffff;
   transition-property: background-color;
-  transition-duration: 10ms;
+  transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: 0;
 }
