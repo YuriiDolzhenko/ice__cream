@@ -104,6 +104,7 @@ html {
     margin-left: 110px;
   }
 }
+<<<<<<< Updated upstream
 .menu-nav {
   color: $color-text-white;
   font-style: normal;
@@ -119,6 +120,22 @@ html {
         margin-right: 35px;
       }
     }
+=======
+
+.menu-nav.is-open {
+  right: 0;
+}
+
+.menu-active .menu-nav {
+  right: 0;
+}
+
+.menu-list {
+  @media (min-width: 1200px) {
+    display: flex;
+    justify-content: space-between;
+    width: 545px;
+>>>>>>> Stashed changes
   }
 }
 .menu-item-link {
