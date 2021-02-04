@@ -227,13 +227,19 @@
   @include transition(background);
 
   &:focus,
-  &:hover,
-  &:focus .to-right-2,
-  &:hover .to-right-2 {
+  &:hover  {
     background: $color-accent-hover;
     fill: $color-text-white;
     @extend %scale_function;
   }
+
+
+   &:focus .to-right-2,
+   &:hover .to-right-2 {
+    
+     fill: $color-text-white;
+     @extend %scale_function;
+   }
 }
 
 .to-right-2 {
